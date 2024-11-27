@@ -4,9 +4,11 @@ function App() {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:3306/users')  // Replace with your server's URL
+    // 서버 URL을 여기에 넣으세요.
+    fetch('http://node-server-389915114.ap-northeast-2.elb.amazonaws.com')
       .then(response => response.json())
-      .then(data => setUsers(data));
+      .then(data => setUsers(data))
+      .catch(error => console.error('Error fetching data:', error));
   }, []);
 
   return (
