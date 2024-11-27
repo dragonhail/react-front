@@ -4,8 +4,8 @@ function App() {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    // 서버 URL을 여기에 넣으세요.
-    fetch('http://node-server-389915114.ap-northeast-2.elb.amazonaws.com')
+    // 서버 URL(LoadBalancer URL)
+    fetch('http://cloudcicd-1102936244.ap-northeast-2.elb.amazonaws.com')
       .then(response => response.json())
       .then(data => setUsers(data))
       .catch(error => console.error('Error fetching data:', error));
